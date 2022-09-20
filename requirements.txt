@@ -1,0 +1,7 @@
+Flask
+pytest
+gunicorn
+Flask[async]
+numpy
+scipy
+imageio

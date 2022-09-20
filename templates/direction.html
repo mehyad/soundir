@@ -1,0 +1,43 @@
+{% extends "layout.html" %}
+{% block head %}
+{{ super() }}
+<style>
+    .angle{
+        width: 50vw;
+    }
+    #mirror{
+    -moz-transform: scale(-1, -1);
+    -o-transform: scale(-1, -1);
+    -webkit-transform: scale(-1, -1);
+    transform: scale(-1, -1);
+    /* position: absolute;
+    top: 70.5%; */
+    }
+  
+    .container{display: flex;flex-direction: column;justify-content: center; align-items: center;
+    height: 50vh;}
+</style>
+{% endblock %}
+{% block content %}
+<div class="container">
+    <img class='angle' src="{{url_for('static',filename='img/movie.gif')}}"
+        alt="">
+    <!-- <img class='angle' id='mirror' src="{{url_for('static',filename='img/movie.gif')}}" alt=""> -->
+    <div>
+        <span class="btn btn-warning" id="btn-stop">Angle is {{angle}}&deg; or
+            {{angle+180}}&deg;</span>
+        <button class="btn btn-primary" id="btn-new">New</button>
+    </div>
+    <p class="fw-light">{{msg}}</p>
+</div>
+<script>
+    $return = $('#btn-new');
+    $return.click(function () {
+        window.location.href = "{{url_for('index')}}";
+    });
+    console.log("msg:{{msg}}");
+    </script>
+{% endblock %}
+{% block footer %}
+{{ super() }}
+{% endblock %}

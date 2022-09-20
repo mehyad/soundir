@@ -1,0 +1,35 @@
+body {
+    padding: 0;
+    margin: 0;
+}
+
+.container {
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+}
+
+.footer {
+    margin: auto 0;
+}
+
+.footer img {
+    width: 5rem;
+}
+
+/* 
+.container{
+    display: flexbox;
+    align-items: center;
+    justify-content: center;   
+
+}
+.show_angle{
+    flex-direction: column;
+    display: flexbox;
+    align-items: center;
+    justify-content: center;   
+}
+.show_angle img{
+    width: 100vw;
+} */

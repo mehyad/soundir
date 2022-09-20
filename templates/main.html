@@ -1,0 +1,60 @@
+{% extends "layout.html" %}
+{% block head %}
+{{ super() }}
+{% endblock %}
+{% block content %}
+<section class="main">
+    Using this tool, you can predict the direction of the incoming sound.
+    For a better implementation of the program, first complete the following
+    information.
+</section>
+<form class="form" id="setting-form" method="POST">
+    <div class="input-group mb-3">
+        <span class="input-group-text">Microphone distance:</span>
+        <input class="form-control" type="text" name="distance"
+            id="distance_sel"
+            placeholder="" required>
+    </div>
+    <div class="input-group mb-3">
+        <label class="input-group-text" for="method_sel">Method:</label>
+        <select class="form-select" id="method_sel" name="method">
+            <option value="GD" selected>GD</option>
+            <option value="SPR">SPR</option>
+        </select>
+    </div>
+    <div class="input-group">
+        <input type="submit" value="Next" class="btn
+            btn-primary">
+    </div>
+</form>
+<script>
+        var width = document.documentElement.clientWidth *0.0264583;
+        var height = document.documentElement.clientHeight *0.0264583;
+        var max_value = Math.max(width, height);
+        const md = document.querySelector('#distance_sel');
+        md.setAttribute('placeholder','~'+Math.round(max_value));
+        // $('#setting-form-btn').click((e)=>{
+        //     var distance = $('#distance').val();
+        //     var method = $('#method_sel').val();
+        //     if (distance == ''){
+        //         distance = Math.round(max_value);
+        //     }
+        //     // alert(`distance: ${distance}, method: ${method}`);
+        //     $.ajax({
+        //         url:'/',
+        //         type:'POST',
+        //         data:{'distance':distance, 'method':method},
+        //         success:function(response){
+        //             console.log(response);
+        //         },
+        //         error:function(error){
+        //             console.log(error);
+        //         }
+        //     })
+        //     e.preventDefault();
+        // })
+</script>
+{% endblock %}
+{% block footer %}
+{{ super() }}
+{% endblock %}
